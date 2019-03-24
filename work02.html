@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin-top: auto; 
+        }
+        .overall{
+            width: 350px;
+            border: 1px solid black; 
+        }
+        form{
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+        #sea{
+            width: 200px;
+            height: 40px;
+        }
+        button{
+            width: 130px;
+            height: 35px;
+        }
+        #recent{
+            height: 150px;
+            /* border: 1px solid red; */
+        }
+        .font{
+            display: inline;
+            font-size: 16px;
+            margin:0 3px;
+            padding: 0 1px;
+            background-color: rgb(221, 219, 219);
+        }
+        .x{
+            width: 20px;
+            height: 20px;
+            display: block;
+            float: right;
+            font-size: 16px;
+            margin:6px 3px;
+            text-align: center;
+            color: white;
+            background-color: rgb(221, 219, 219);
+        }
+    </style>
+</head>
+<body>
+    <div class="overall">
+        <form action="#" method="GET">
+            <input type="search" name="sousuo" placeholder="请输入想要查找的商品" id="sea">
+            <button onclick="search()">搜索</button>
+        </form>
+        <p style="font-size: 16px; margin-left: 5px; margin-bottom: 0;">最近搜索</p>
+        <div id="recent">
+
+        </div>
+    </div>
+    
+</body>
+</html>
+    <script>
+        window.onload = function init(){
+			if(!window.localStorage){
+				alert("您的浏览器不支持localStorage");
+			}else{
+				var ren = document.getElementById("recent");
+                var len = localStorage.length;
+                for(var i=len-1; i>=0; i--){
+                    var cp = document.createElement('p');
+                    var node=document.createTextNode(localStorage.getItem("key"+i));
+                    cp.appendChild(node);
+                    ren.appendChild(cp);
+                    cp.setAttribute("class","font");
+                }
+                var x = document.createElement('p');
+                var xnode = document.createTextNode("X");
+                x.appendChild(xnode);
+                ren.appendChild(x);
+                x.setAttribute("class","x");
+                x.setAttribute("onclick","del()")
+			}
+		}
+
+        function search(){
+            var sea = document.getElementById("sea");
+            if(sea.value!=""){
+                var k = 0;
+                for(var i=0; i<localStorage.length; i++){
+                    if(localStorage.getItem("key"+i)==sea.value){
+                        k = 1;
+                    }
+                }
+                if(!k){
+                    localStorage.setItem("key"+localStorage.length , sea.value);
+                    location.reload();
+                }   
+            }        
+        }
+
+        function del(){
+            localStorage.clear();
+            // for(var i=0;i<localStorage.length;i++){
+            //     localStorage.removeItem("key"+i);
+            // }
+            location.reload();
+        }
+	</script>
