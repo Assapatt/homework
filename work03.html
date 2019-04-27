@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>刮刮卡</title>
+    <style>
+        #canvas1{
+            margin: 0 auto;
+            border: 4px solid rgb(126, 161, 175);
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+        <canvas id="canvas1" width="200" height="100">
+                你的浏览器不支持Canvas
+        </canvas>
+</body>
+<script>
+    var canvas = document.getElementById("canvas1");
+    var context = canvas.getContext("2d");
+    /*奖品*/
+    var awards = ["一等奖！","二等奖！","二等奖！","三等奖！","三等奖！","三等奖！","三等奖！","谢谢参与！","谢谢参与！","谢谢参与！"];
+    var award = awards[Math.floor(Math.random()*awards.length)];
+    context.font = "bold 32px sans-serif";
+    context.textAlign = "center";
+    context.textBaseLine = "middle";
+    context.fillText(award, 110, 60);
+    
+    var dataurl = canvas.toDataURL("image/png",1);
+    canvas.style.background = "url("+dataurl+")";
+    context.clearRect(0,0,200,100);
+    
+    //蒙版
+    var imgData = context.createImageData(200, 100);
+    for (var i = 0; i < imgData.data.length; i += 4) {
+        imgData.data[i] = 190;  // imgData.data[i]=255 红色
+        imgData.data[i + 1] = 190;// imgData.data[i+1]=255 绿色
+        imgData.data[i + 2] = 190;// imgData.data[i+2]=255 蓝色
+        imgData.data[i + 3] = 255;
+    }
+    context.putImageData(imgData, 0, 0);
+    var flag = false;
+
+    //鼠标按下
+    canvas.addEventListener("mousedown",function(){
+        flag = true;
+        context.globalCompositeOperation = "destination-out";
+    })
+    //鼠标移动
+    canvas.addEventListener("mousemove",function(e){
+        if(flag){
+            var x = e.clientX-canvas.offsetLeft;
+            var y = e.clientY-canvas.offsetTop;
+            context.beginPath();
+            context.arc(x,y,15,0,2*Math.PI);
+            context.fill();
+        }
+    })
+    //鼠标提起
+    canvas.addEventListener("mouseup",function(){
+        flag = false;
+        context.globalCompositeOperation = "source-over";
+        var data = context.getImageData(0,0,200,100).data; 
+        for(var i=0,j=0;i<data.length;i+=4){
+            if(data[i] && data[i+1] && data[i+2] && data[i+3]){
+                j++;
+            }
+        }
+        //当图层被擦除剩余85%时触发
+        if(j<=200*100*0.15){
+            context.clearRect(0,0,200,100);
+        }
+
+    })
+</script>
+</html>
