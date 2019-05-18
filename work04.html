@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3变形与动画</title>
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+        }
+        .box{
+            position: relative;
+            width: 465px;
+            height: 540px;
+            border: solid 2px #aca9aa;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden
+        }
+        .background{
+            width: 465px;
+            height: 305px;
+            background: url(img/zhanqiao.jpg);
+            background-size: cover;
+        }
+        .background div{
+            width: 465px;
+            height: 305px;
+        }
+        .box:hover .background div{
+            height: 156px;
+            background:rgba(80, 77, 77, 0.5);
+            transition-property: height,background;
+		    transition-duration: 1s;
+        }
+        .text{
+            z-index: 1000;
+            width: 465px;
+            height: 200px;
+            background: white;
+        }
+        .t-p{
+            display: block;
+            position: relative; 
+            top: -30px;
+            width: 60px;
+            height: 30px;
+            background: rgb(241, 109, 61);
+            float: left;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            font-size: 14px;
+        }
+        .box:hover .text{
+	        height: 550px;
+		    transition-property: height;
+		    transition-duration: 1s;
+        }
+        .box:hover .background{
+            transform: scale(1.5,1.5); 
+        }
+        .date{
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            z-index: 1000;
+            display: block;
+            width: 50px;
+            height: 50px;
+            background: rgb(241, 109, 61);
+            border-radius: 25px 25px;
+            color: white;
+            text-align: center;
+            line-height: 13px;
+            font-size: 14px;
+            font-weight: bold;
+            white-space: pre;
+        }
+        h3{
+            display: block;
+            position: relative;
+            left: -30px;
+            margin-top: 15px;
+            text-align: left;
+        }
+        .a4{
+            margin-left: 30px;
+            margin-top: 10px;
+            color: rgb(241, 109, 61);
+        }
+        .yc-content{
+            display: none;
+            /* opacity: 0; */
+            margin-left: 30px;
+            margin-top: 10px;
+            margin-right: 40px;
+            font-size: 15px;
+            line-height: 2em;
+            color: #7c7779;
+        }
+        .box:hover .text .yc-content{
+            /* opacity: 1; */
+            display: block;
+            transition-property: display;
+		    transition-duration: 1s;
+        }
+        .pinglun{
+            /* margin: 0 0; */
+            margin-left: 30px;
+            margin-bottom: 15px;
+            text-align: left;
+            display: block;
+            color: #7c7779;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p class="date" id="time"></p>
+        <div class="background">
+            <div class="mengban"></div>
+        </div>
+        <div class="text">
+            <p class="t-p">照片</p>
+            <div class="content">
+                <h3>青岛栈桥</h3>
+                <p class="a4">国家AAAA级旅游景区</p>
+                <p class="yc-content">
+                    青岛栈桥是青岛海滨风景区的景点之一，是国务院于
+                    1982年首批公布的国家级风景名胜区。青岛栈桥位
+                    于游人如织的青岛中山路南端，桥身从海岸探入如弯
+                    月般的青岛湾深处。桥身供游人参观并在此停靠旅游
+                    船，由此乘船可看海上青岛。
+                </p>
+            </div>
+        </div>
+        <p class="pinglun">10分钟前&nbsp;&nbsp;&nbsp;&nbsp;123评论</p>
+    </div>
+</body>
+<script>
+    function showDate(){
+        var numArr = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"];
+        var mydate = new Date();
+        var date = mydate.getDate();
+        var month = mydate.getMonth();
+        var time = document.getElementById('time');
+        time.innerHTML = "   " + "\n" +date + "\n" +numArr[month] + "月" ;
+    }
+    showDate();
+</script>
+</html>
