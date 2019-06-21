@@ -37,7 +37,7 @@ header {
 
 @media (max-width: 972px) {
     .navbar-brand {
-        width: 200px;
+        width: 190px;
     }
 }
 
@@ -61,13 +61,32 @@ header {
     margin: 0;
 }
 
-.rapid-btn{
+.navbar-toggle {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    background-image: none;
+}
+
+.navbar-toggle .icon-bar {
+    display: block;
+    width: 45px;
+    height: 4px;
+    border-radius: 1px;
+}
+
+.navbar-toggle .icon-bar+.icon-bar {
+    margin-top: 15px;
+}
+
+.rapid-btn {
     background: #e8420a;
     border-radius: 5px;
-    width: 165px;
-    height: 55px;
+    width: 160px;
+    height: 50px;
+    margin-top: 15px;
 }
-.rapid{
+
+.rapid {
     color: white;
     font-size: 28px;
     font-weight: 100;
@@ -76,8 +95,8 @@ header {
 .serach {
     position: absolute;
     bottom: 15%;
-    left: 50%;
-    margin-left: -306px;
+    left: 27%;
+    /* margin-left: -306px; */
     width: 612px;
     height: 62px;
     border: solid 6px rgba(43, 41, 41, 0.5);
@@ -141,6 +160,101 @@ header {
     font-size: 20px;
     color: white;
 }
+.bycar-sm {
+    display: none;
+}
+.bycar-p{
+    display: none;
+}
+.bycar-button{
+    display: none;
+}
+@media(min-width:750px) {
+    .bycar-sm {
+        display: none;
+    }
+}
+
+@media (max-width: 750px) {
+    .bycar-pc {
+        display: none;
+    }
+
+    .bus {
+        display: none;
+    }
+
+    .bycar-sm {
+        display: block;
+        background: white;
+        height: 200px;
+    }
+
+    .bycar-sm img {
+        margin-top: 45px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .bycar-p {
+        display: block;
+        background: white;
+        height: 200px;
+        padding-top: 40px;
+        padding: 0;
+        padding-top: 30px;
+    }
+
+    .bycar-p h4 {
+        display: block;
+        color: #1c5080;
+        font-size: 30px;
+    }
+
+    .bycar-p p {
+        display: block;
+        margin-top: 30px;
+        color: #1c5080;
+        font-size: 18px;
+    }
+
+    .bycar-button {
+        display: block;
+        background: white;
+        height: 200px;
+        padding: 0;
+    }
+
+    .bycar-button button {
+        display: block;
+        width: 160px;
+        height: 50px;
+        margin: 70px auto;
+        border: solid 1px #000000;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0);
+        font-size: 20px;
+        color: #000000;
+    }
+
+    @media (max-width: 520px) {
+        .bycar-p h4 {
+            font-size: 20px;
+        }
+
+        .bycar-p p {
+            font-size: 12px;
+        }
+
+        .bycar-button button {
+            width: 100px;
+            height: 30px;
+            font-size: 12px;
+
+        }
+    }
+
+}
 
 .hotroute {
     /* display: block; */
@@ -149,6 +263,68 @@ header {
     letter-spacing: 20px;
     font-size: 36px;
     color: #000000;
+}
+
+.xs-more{
+    display: none;
+}
+
+@media(max-width:750px) {
+    body{
+        background: white;
+    }
+    .hr {
+        background: white;
+        margin-top: 20px;
+        padding:40px 25px;
+        border-top: solid 30px #e8e8e8;
+    }
+
+    .hotroute {
+        display: block;
+        border-left: solid 4px #cb5405;
+        margin-top: 0;
+        text-align: left;
+        letter-spacing: 0;
+        font-size: 30px;
+        color: #000000;
+    }
+
+    .en-hotroute {
+        display: none;
+    }
+
+    .thbn{
+        margin:0 25px;
+    }
+    .thbn a{
+        padding: 0;
+        margin-top: 20px;
+    }
+    .rightblock{
+        display: none;
+    }
+    .xs-more{
+        display: block;
+        height: 130px;
+        text-align: center;
+        background: white;
+    }
+    .visa{
+        /* margin:0 40px; */
+        padding: 0 25px;
+        border-top: solid 30px #e8e8e8;
+    }
+    .visa-e{
+        height: 100px;
+        padding: 0;
+        padding-top: 30px;
+        border-bottom: solid 1px #e8e8e8;
+    }
+    .visa-p{
+        display: none;
+    }
+
 }
 
 .en-hotroute {
@@ -190,14 +366,16 @@ header {
     width: 100%;
     background: rgba(129, 126, 126, 0.521);
     position: absolute;
-    bottom: 0px;    
+    bottom: 0px;
     text-align: left;
 }
-.white-cp p{
+
+.white-cp p {
     font-size: 20px;
     color: white;
 }
-.white-cp span{
+
+.white-cp span {
     font-size: 30px;
 }
 
@@ -226,6 +404,9 @@ header {
     width: 100%;
     background: url(img/back.png) no-repeat;
 }
+.wish .container{
+    padding: 0;
+}
 
 .wish-p1 {
     margin-top: 80px;
@@ -239,8 +420,19 @@ header {
     color: #000000;
 }
 
+.wish-cp{
+    display: none;
+}
+
+.wish-miss1{
+    height: 345px;
+    z-index: 100;
+    padding: 0;
+}
+
 .wish-server {
     height: 345px;
+    padding-top: 70px;
     background: #1c5080cc;
 }
 
@@ -256,6 +448,27 @@ header {
     margin-right: 15%;
     margin-top: 30px;
     line-height: 2.5em;
+}
+
+.miss2{
+    padding: 0;
+    margin-top: 3px;
+}
+.wish-server h4{
+    display: none;
+}
+.server-ln{
+    display: none;
+}
+
+.pz-three{
+    padding: 0; 
+    margin-top: 3px;
+    background:#1c5080;
+}
+
+.three-cp{
+    display: none;
 }
 
 .three-pz {
@@ -323,13 +536,109 @@ header {
     color: white;
     font-size: 14px;
 }
-.footer-foot{
+
+.footer-foot {
     border-top: solid 1px #404040;
     height: 160px;
 }
-.footer-foot p{
+
+.footer-foot p {
     text-align: center;
     color: white;
     font-size: 16px;
     margin-top: 44px;
+}
+.footer-foot h4{
+    display: none;
+}
+
+@media(max-width:750px){
+    .bbanner{
+        display: none;
+    }
+    .wish{
+        border-top: solid 30px #e8e8e8; 
+    }
+    .wish div{
+        padding: 0 25px;
+    }
+    .wish-p{
+        display: none;
+    }
+    .wish-cp{
+        display: block;
+    }
+    .wish-cp p{
+        display: block;
+        border-left: solid 4px #cb5405;
+        margin-top: 0;
+        text-align: left;
+        letter-spacing: 0;
+        font-size: 30px;
+        color: #000000;
+        margin:40px 0;
+    }
+    .wish-miss1 img{
+        width: 100%;
+        height: auto;
+    }
+    .wish-server{
+        background: white;
+        height: auto;
+        margin-bottom: 60px;
+        margin-top: 100px;
+    }
+    .wish-server p{
+        color: #000000;
+        margin: 0;
+        font-size: 22px;
+    }
+    .wish-server h3{
+        display: none;
+    }
+    .wish-server h4{
+        display: block;
+        margin: 20px 0;
+        color: #000000;
+        font-size: 30px;
+    }
+    .server-ln{
+        display: block;
+        margin-top: 80px;
+    }
+    .server-ln h4{
+        display: block;
+        margin: 20px 0;
+        color: #000000;
+        font-size: 30px;
+    }
+    .pz-three{
+        display: none;
+    }
+    .three-cp-pz{
+        height: 190px;
+        border-bottom: solid 1px black;
+    }
+    .three-cp-pz p{
+        font-size: 22px;
+    }
+
+
+
+
+    .other{
+        display: none;
+    }
+    .footer-foot p{
+        display: none;
+    }
+    .footer-foot h4{
+        display: block;
+        font-size: 22px;
+        color: white;
+        line-height: 1.8em;
+    }
+    .three-cp{
+        display:block;
+    }
 }
