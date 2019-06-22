@@ -69,33 +69,33 @@ header {
 
 .navbar-toggle .icon-bar {
     display: block;
-    width: 45px;
+    width: 40px;
     height: 4px;
     border-radius: 1px;
 }
 
 .navbar-toggle .icon-bar+.icon-bar {
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .rapid-btn {
     background: #e8420a;
     border-radius: 5px;
-    width: 160px;
-    height: 50px;
+    width: 130px;
+    height: 40px;
     margin-top: 15px;
 }
 
 .rapid {
     color: white;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 100;
 }
 
 .serach {
     position: absolute;
     bottom: 15%;
-    left: 27%;
+    left: 30%;
     /* margin-left: -306px; */
     width: 612px;
     height: 62px;
@@ -132,6 +132,14 @@ header {
     border-bottom-right-radius: 8px;
 }
 
+@media(max-width:750px) {
+    .serach {
+        left: 22%;
+        font-size: 12px;
+    }
+
+}
+
 .bycar {
     margin-top: 10px;
     text-align: center;
@@ -160,15 +168,19 @@ header {
     font-size: 20px;
     color: white;
 }
+
 .bycar-sm {
     display: none;
 }
-.bycar-p{
+
+.bycar-p {
     display: none;
 }
-.bycar-button{
+
+.bycar-button {
     display: none;
 }
+
 @media(min-width:750px) {
     .bycar-sm {
         display: none;
@@ -265,18 +277,19 @@ header {
     color: #000000;
 }
 
-.xs-more{
+.xs-more {
     display: none;
 }
 
 @media(max-width:750px) {
-    body{
+    body {
         background: white;
     }
+
     .hr {
         background: white;
         margin-top: 20px;
-        padding:40px 25px;
+        padding: 40px 25px;
         border-top: solid 30px #e8e8e8;
     }
 
@@ -294,34 +307,40 @@ header {
         display: none;
     }
 
-    .thbn{
-        margin:0 25px;
+    .thbn {
+        margin: 0 25px;
     }
-    .thbn a{
+
+    .thbn a {
         padding: 0;
         margin-top: 20px;
     }
-    .rightblock{
+
+    .rightblock {
         display: none;
     }
-    .xs-more{
+
+    .xs-more {
         display: block;
         height: 130px;
         text-align: center;
         background: white;
     }
-    .visa{
+
+    .visa {
         /* margin:0 40px; */
         padding: 0 25px;
         border-top: solid 30px #e8e8e8;
     }
-    .visa-e{
+
+    .visa-e {
         height: 100px;
         padding: 0;
         padding-top: 30px;
         border-bottom: solid 1px #e8e8e8;
     }
-    .visa-p{
+
+    .visa-p {
         display: none;
     }
 
@@ -404,7 +423,8 @@ header {
     width: 100%;
     background: url(img/back.png) no-repeat;
 }
-.wish .container{
+
+.wish .container {
     padding: 0;
 }
 
@@ -420,11 +440,11 @@ header {
     color: #000000;
 }
 
-.wish-cp{
+.wish-cp {
     display: none;
 }
 
-.wish-miss1{
+.wish-miss1 {
     height: 345px;
     z-index: 100;
     padding: 0;
@@ -450,24 +470,26 @@ header {
     line-height: 2.5em;
 }
 
-.miss2{
+.miss2 {
     padding: 0;
     margin-top: 3px;
 }
-.wish-server h4{
-    display: none;
-}
-.server-ln{
+
+.wish-server h4 {
     display: none;
 }
 
-.pz-three{
-    padding: 0; 
+.server-ln {
+    display: none;
+}
+
+.pz-three {
+    padding: 0;
     margin-top: 3px;
-    background:#1c5080;
+    background: #1c5080;
 }
 
-.three-cp{
+.three-cp {
     display: none;
 }
 
@@ -548,27 +570,35 @@ header {
     font-size: 16px;
     margin-top: 44px;
 }
-.footer-foot h4{
+
+.footer-foot h4 {
     display: none;
 }
 
-@media(max-width:750px){
-    .bbanner{
+@media(max-width:750px) {
+    .bbanner {
         display: none;
     }
-    .wish{
-        border-top: solid 30px #e8e8e8; 
+
+    .wish {
+        border-top: solid 30px #e8e8e8;
     }
-    .wish div{
-        padding: 0 25px;
+
+    .wish div {
+        /* padding: 0 25px; */
+        padding-right: 25px;
+        padding-left: 25px;
     }
-    .wish-p{
+
+    .wish-p {
         display: none;
     }
-    .wish-cp{
+
+    .wish-cp {
         display: block;
     }
-    .wish-cp p{
+
+    .wish-cp p {
         display: block;
         border-left: solid 4px #cb5405;
         margin-top: 0;
@@ -576,69 +606,81 @@ header {
         letter-spacing: 0;
         font-size: 30px;
         color: #000000;
-        margin:40px 0;
+        margin: 40px 0;
     }
-    .wish-miss1 img{
+
+    .wish-miss1 img {
         width: 100%;
         height: auto;
     }
-    .wish-server{
+
+    .wish-server {
         background: white;
         height: auto;
         margin-bottom: 60px;
         margin-top: 100px;
+        padding-top: 0;
     }
-    .wish-server p{
+
+    .wish-server p {
         color: #000000;
         margin: 0;
         font-size: 22px;
     }
-    .wish-server h3{
+
+    .wish-server h3 {
         display: none;
     }
-    .wish-server h4{
+
+    .wish-server h4 {
         display: block;
         margin: 20px 0;
         color: #000000;
         font-size: 30px;
     }
-    .server-ln{
+
+    .server-ln {
         display: block;
         margin-top: 80px;
     }
-    .server-ln h4{
+
+    .server-ln h4 {
         display: block;
         margin: 20px 0;
         color: #000000;
         font-size: 30px;
     }
-    .pz-three{
+
+    .pz-three {
         display: none;
     }
-    .three-cp-pz{
+
+    .three-cp-pz {
         height: 190px;
         border-bottom: solid 1px black;
+        padding-top: 50px;
     }
-    .three-cp-pz p{
+
+    .three-cp-pz p {
         font-size: 22px;
     }
 
-
-
-
-    .other{
+    .other {
         display: none;
     }
-    .footer-foot p{
+
+    .footer-foot p {
         display: none;
     }
-    .footer-foot h4{
+
+    .footer-foot h4 {
         display: block;
         font-size: 22px;
         color: white;
         line-height: 1.8em;
     }
-    .three-cp{
-        display:block;
+
+    .three-cp {
+        display: block;
     }
 }
